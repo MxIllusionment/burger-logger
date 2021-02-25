@@ -1,0 +1,25 @@
+{
+  "name": "burger-logger",
+  "version": "1.0.0",
+  "description": "A web application that tracks types of burgers and whether or not they have been devoured.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malenchite/burger-logger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malenchite/burger-logger/issues"
+  },
+  "homepage": "https://github.com/malenchite/burger-logger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
+}

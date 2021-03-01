@@ -13,8 +13,8 @@ router.post("/api/add", (req, res) => {
   res.redirect("/");
 });
 
-router.post("/api/devour", (req, res) => {
-  console.log(req.body);
+router.post("/api/devour/:id", (req, res) => {
+  console.log(req.params.id);
   /* TODO: Parse POST data and update burger as devoured */
   res.redirect("/");
 });

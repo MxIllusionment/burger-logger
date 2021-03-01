@@ -12,10 +12,12 @@
         <div class="card-body">
           {{#each burgers}}
           {{#unless this.devoured}}
-          <p>
-            {{this.burger_name}}
-            <button class="btn devour-btn btn-sm ml-2" data-id="{{this.id}}">Devour It!</button>
-          </p>
+          <form action="/" method="POST">
+            <p>
+              {{this.burger_name}}
+              <button type="submit" class="btn devour-btn btn-sm ml-2" name="id" value="{{this.id}}">Devour It!</button>
+            </p>
+          </form>
           {{/unless}}
           {{/each}}
         </div>

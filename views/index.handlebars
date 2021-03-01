@@ -12,7 +12,7 @@
         <div class="card-body">
           {{#each burgers}}
           {{#unless this.devoured}}
-          <form action="/" method="POST">
+          <form action="/api/devour" method="POST">
             <p>
               {{this.burger_name}}
               <button type="submit" class="btn devour-btn btn-sm ml-2" name="id" value="{{this.id}}">Devour It!</button>
@@ -40,7 +40,7 @@
   </div>
   <div class="row">
     <div class="col-12 text-center">
-      <form action="/" method="POST">
+      <form action="/api/add" method="POST">
         <div>
           <textarea type="text" name="burger_name" rows="2" cols="30"></textarea>
         </div>

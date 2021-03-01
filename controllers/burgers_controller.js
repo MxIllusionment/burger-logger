@@ -7,9 +7,15 @@ router.get("/", (req, res) => {
   res.render("index", { burgers: [{ id: 1, burger_name: "Plain Ol' Burger", devoured: false }] });
 });
 
-router.post("/", (req, res) => {
+router.post("/api/add", (req, res) => {
   console.log(req.body);
-  /* TODO: Parse POST data and insert/update */
+  /* TODO: Parse POST data and insert new burger */
+  res.redirect("/");
+});
+
+router.post("/api/devour", (req, res) => {
+  console.log(req.body);
+  /* TODO: Parse POST data and update burger as devoured */
   res.redirect("/");
 });
 

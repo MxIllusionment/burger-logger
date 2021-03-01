@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <img src="public/assets/images/hamburger.png" alt="Hamburger" width="250">
+    <h1>Eat-Da-Burger!</h1>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6 col-lg-5 text-left mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Burgers</h4>
+        </div>
+        <div class="card-body">
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <p>
+            {{this.burger_name}}
+            <button class="btn btn-secondary btn-sm ml-2" data-id="{{this.id}}">Devour It!</button>
+          </p>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-5 text-right mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Devoured</h4>
+        </div>
+        <div class="card-body">
+          {{#each burgers}}
+          {{#if this.devoured}}
+          <p>{{this.burger_name}}</p>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <form action="/" method="POST">
+        <div>
+          <textarea type="text" name="burger" rows="2" cols="30"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      Enter the name of a burger and submit to add it to the list
+    </div>
+  </div>
+</div>
+</div>

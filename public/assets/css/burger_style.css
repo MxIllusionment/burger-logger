@@ -1,0 +1,27 @@
+/* Basic color scheme */
+body {
+  background-color: #cc643e;
+}
+
+.jumbotron {
+  background-color: #d37b40;
+}
+
+.card {
+  background-color: #d37b40;
+}
+
+/* Buttons */
+.submit-btn,
+.devour-btn {
+  background-color: #C22008;
+  border-color: #C22008;
+  color: white;
+}
+
+.submit-btn:hover,
+.devour-btn:hover {
+  background-color: #BB0000;
+  border-color: #C22008;
+}
+

@@ -40,7 +40,7 @@ npm start
 ![Screenshot of](assets/images/screenshot.png)  
 
 ## Deployment
-This application has been deployed on Heroky at https://malenchite-burger.herokuapp.com
+This application has been deployed on Heroku at https://malenchite-burger.herokuapp.com
 
 ## License  
 This application is covered under the **ISC** license. More info can be found here: [ISC](https://opensource.org/licenses/ISC)

@@ -7,22 +7,15 @@ const connInfo = {
   database: process.env.DB_NAME
 };
 
-var conn;
+const connection = mysql.createConnection(connInfo);
 
-/* Opens a connection to the MySQL server and returns the connection */
-function connection() {
-  conn = mysql.createConnection(connInfo);
+connection.connect((err) => {
+  if (err) {
+    console.error(`error connecting: ${err.stack}`);
+    return;
+  }
 
-  conn.connect((err) => {
-    if (err) {
-      console.error(`error connecting: ${err.stack}`);
-      return;
-    }
-
-    console.log(`connected as id ${conn.threadId}`);
-  });
-
-  return conn;
-}
+  console.log(`connected as id ${conn.threadId}`);
+});
 
 module.exports = connection;

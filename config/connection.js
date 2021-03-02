@@ -7,15 +7,7 @@ const connInfo = {
   database: process.env.DB_NAME
 };
 
-const connection = mysql.createConnection(connInfo);
+const connection = mysql.createPool(connInfo);
 
-connection.connect((err) => {
-  if (err) {
-    console.error(`error connecting: ${err.stack}`);
-    return;
-  }
-
-  console.log(`connected as id ${connection.threadId}`);
-});
 
 module.exports = connection;

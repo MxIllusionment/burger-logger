@@ -12,12 +12,10 @@
         <div class="card-body">
           {{#each burgers}}
           {{#unless this.devoured}}
-          <form action="/api/devour/{{this.id}}" method="POST">
-            <p>
-              {{this.burger_name}}
-              <button type="submit" class="btn devour-btn btn-sm ml-2">Devour It!</button>
-            </p>
-          </form>
+          <p>
+            {{this.burger_name}}
+            <button type="submit" class="btn devour-btn btn-sm ml-2" data-id="{{this.id}}">Devour It!</button>
+          </p>
           {{/unless}}
           {{/each}}
         </div>
@@ -40,9 +38,9 @@
   </div>
   <div class="row">
     <div class="col-12 text-center">
-      <form action="/api/add" method="POST">
+      <form>
         <div class="mb-2">
-          <input type="text" name="burger_name" size="55" maxlength="50">
+          <input id="burger-name" type="text" size="55" maxlength="50">
         </div>
         <div>
           <button type="submit" class="btn submit-btn">Submit</button>
@@ -56,4 +54,36 @@
     </div>
   </div>
 </div>
-</div>
+
+<script>
+  /* Click event for all Devour buttons to update burger */
+  $(".devour-btn").click(function (e) {
+    e.preventDefault();
+
+    const id = $(this).attr("data-id");
+
+    $.ajax(
+      {
+        url: `/api/burgers/${id}`,
+        method: "PUT",
+        data: { devoured: 1 }
+      })
+      .then(response => location.reload());
+  });
+
+  /* Click event for submitting a new burger */
+  $(".submit-btn").click((e) => {
+    e.preventDefault();
+
+    const name = $("#burger-name").val().trim();
+
+    $.ajax(
+      {
+        url: "/api/burgers",
+        method: "POST",
+        data: { burger_name: name }
+      })
+      .then(response => location.reload());
+  });
+
+</script>

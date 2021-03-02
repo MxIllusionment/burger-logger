@@ -17,6 +17,6 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use("/", burgers_controller);
+app.use(burgers_controller);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));

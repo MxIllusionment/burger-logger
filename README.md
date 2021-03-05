@@ -23,7 +23,11 @@ npm install
 The provided [schema.sql](https://github.com/malenchite/burger-logger/blob/main/db/schema.sql) file should be used to structure the required database.
 
 ## Usage
-A MySQL database must be available, either locally or remotely. Environment variables must be set as follows:
+A MySQL database must be available, either locally or remotely. You may set a single MySQL URL as an environment variable:
+```
+DATABASE_URL = full MySQL URL with username, password, host, database
+```
+or you may set the values individually:
 ```
 DB_HOST = host name of MySQL DB
 DB_USER = username for logging in

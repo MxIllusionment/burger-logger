@@ -12,10 +12,7 @@
         <div class="card-body">
           {{#each burgers}}
           {{#unless this.devoured}}
-          <p>
-            {{this.burger_name}}
-            <button type="submit" class="btn devour-btn btn-sm ml-2" data-id="{{this.id}}">Devour It!</button>
-          </p>
+          {{> burgers/burger-block}}
           {{/unless}}
           {{/each}}
         </div>
@@ -29,7 +26,7 @@
         <div class="card-body">
           {{#each burgers}}
           {{#if this.devoured}}
-          <p>{{this.burger_name}}</p>
+          {{> burgers/burger-block}}
           {{/if}}
           {{/each}}
         </div>
